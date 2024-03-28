@@ -33,7 +33,7 @@
                 android:textColor="#3F51B5" />
 
             <EditText
-                android:id="@+id/edtH"
+                android:id="@+id/editTextNumber"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.6"
@@ -59,7 +59,7 @@
                 android:textColor="#3F51B5" />
 
             <EditText
-                android:id="@+id/edtW"
+                android:id="@+id/editTextNumber2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.6"
@@ -77,7 +77,7 @@
             android:paddingRight="20dp">
 
             <Button
-                android:id="@+id/btnCal"
+                android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -85,7 +85,7 @@
                 android:text="@string/bmi" />
 
             <Button
-                android:id="@+id/btnClear"
+                android:id="@+id/button2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.3"
@@ -93,11 +93,12 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/txvShow"
+            android:id="@+id/lblOutput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:gravity="center" />
+            android:gravity="center"
+            android:text="TextView" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
