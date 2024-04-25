@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
                 RadioButton boy = (RadioButton) findViewById(R.id.rdbBoy);
                 RadioButton girl = (RadioButton) findViewById(R.id.rdbGirl);
                 if(boy.isChecked())
-                    outputStr += "男生\n";
+                    outputStr += getResources().getString(R.string.male);
                 else if(girl.isChecked())
-                    outputStr += "女生\n";
+                    outputStr += getResources().getString(R.string.female);
 //
                 RadioGroup type = (RadioGroup) findViewById(R.id.rgType);
                 if(type.getCheckedRadioButtonId() == R.id.rdbAdult)
