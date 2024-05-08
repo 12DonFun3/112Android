@@ -20,6 +20,7 @@
             android:id="@+id/rdbDog"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="小狗" />
 
         <RadioButton
@@ -55,12 +56,12 @@
 
         <ImageView
             android:id="@+id/imgOutput4"
-            android:layout_width="185dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
 
             android:visibility="gone"
-            tools:srcCompat="@mipmap/rabbit" />
+            app:srcCompat="@mipmap/rabbit" />
 
         <ImageView
             android:id="@+id/imgOutput3"
