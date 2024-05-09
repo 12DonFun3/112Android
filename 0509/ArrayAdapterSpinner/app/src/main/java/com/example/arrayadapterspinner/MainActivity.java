@@ -40,7 +40,14 @@ public class MainActivity extends AppCompatActivity {
                         new ArrayAdapter<>(MainActivity.this,
                                 android.R.layout.simple_spinner_item,
                                 tempSet);
-                tempAd.setDropDownViewResource();
+                tempAd.setDropDownViewResource(
+                        android.R.layout.simple_spinner_dropdown_item);
+                temp.setAdapter(tempAd);
+            }
+            
+            @Override
+            public void onNothingSelected(AdapterView<?> parent){
+
             }
         });
     }
