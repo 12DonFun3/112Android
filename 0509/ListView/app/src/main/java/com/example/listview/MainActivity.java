@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -19,11 +20,20 @@ public class MainActivity extends AppCompatActivity {
 
         cities = getResources().getStringArray(R.array.cities);
         lv = (ListView) findViewById(R.id.listview);
+
+        ArrayAdapter<String> adpCities = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_item, cities);
+
+        // 将适配器设置到ListView上
+        lv.setAdapter(adpCities);
+
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // 使用参数parent获取所选项目
+                String selectedCity = parent.getItemAtPosition(position).toString();
                 TextView output = (TextView) findViewById(R.id.lblOutput);
-                output.setText("你是住在" + cities[position]);
+                output.setText("你是住在" + selectedCity);
             }
         });
     }
