@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
                 String selectedCity = parent.getItemAtPosition(position).toString();
                 TextView output = (TextView) findViewById(R.id.lblOutput);
                 output.setText("你是住在" + selectedCity);
+                Toast.makeText(MainActivity.this, "你是住在" + cities[position],
+                        Toast.LENGTH_SHORT).show(); //出現時間
             }
         });
     }
