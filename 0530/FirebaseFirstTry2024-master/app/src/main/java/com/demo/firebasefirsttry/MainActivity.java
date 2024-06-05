@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     private View.OnClickListener mOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+
             Class clazz = null;
             if (view.getId() == R.id.login) {
                 clazz = AuthenticationActivity.class;
