@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onActivityResult(String result) {
                     // 处理从OpActivity返回的结果，并更新TextView
-                    output.setText("計算結果:" + result);
+                    output.setText("計算結果:" + result);//1
                 }
             });
 
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             // 解析OpActivity返回的结果，并将其转换为String类型
             Bundle bundle = intent.getExtras();
             Double result = bundle.getDouble("RESULT");
-            return result.toString();
+            return result.toString(); //1
         }
     }
 
