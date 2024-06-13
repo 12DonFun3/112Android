@@ -1,7 +1,6 @@
 package com.example.bmi;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         txvShow = findViewById(R.id.txvShow);
-        txvShow.setTextSize(36);
+        txvShow.setTextSize(18);
         EditText edtH = findViewById(R.id.edtH);
         EditText edtW = findViewById(R.id.edtW);
         Button btnCal = findViewById(R.id.btnCal);
@@ -32,9 +31,10 @@ public class MainActivity extends AppCompatActivity {
                 String weightStr = edtW.getText().toString();
 
                 // Check if input is empty or non-numeric
-                if (heightStr.isEmpty() || weightStr.isEmpty() ||
-                        !isNumeric(heightStr) || !isNumeric(weightStr)) {
+                if (heightStr.isEmpty() || weightStr.isEmpty() || !isNumeric(heightStr) || !isNumeric(weightStr)) {
                     Toast.makeText(MainActivity.this, "請輸入有效數字", Toast.LENGTH_SHORT).show();
+                    txvShow.setText("輸入錯誤：\n身高: " + heightStr + "\n體重: " + weightStr);
+                    txvShow.setTextColor(Color.RED);
                     return;
                 }
 
@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 // Check if input is 0
                 if (height == 0 || weight == 0) {
                     Toast.makeText(MainActivity.this, "請輸入有效數字", Toast.LENGTH_SHORT).show();
+                    txvShow.setText("輸入錯誤：\n身高: " + heightStr + "\n體重: " + weightStr);
+                    txvShow.setTextColor(Color.RED);
                     return;
                 }
 
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
                 else
                     txvShow.setTextColor(Color.GREEN);
 
-                txvShow.setText(String.format("%.2f", bmi));
+                txvShow.setText(String.format("BMI: %.2f", bmi));
             }
         });
 
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 edtH.setText("");
                 edtW.setText("");
                 txvShow.setText("");
+                txvShow.setTextColor(Color.BLACK);
             }
         });
     }
